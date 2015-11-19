@@ -1,6 +1,8 @@
     // server.js
 
         // set up ============================
+        var http     = require('http');
+        var session  = require('express-session');
         var express  = require('express');
         var app      = express();                       // creer notre app w/ express
         var mongoose = require('mongoose');             // mongoose pour mongodb
@@ -8,13 +10,15 @@
         var morgan   = require('morgan');               // log request to the console (express4)
         var bodyParser = require('body-parser');        // tire les information venant de HTML POST (express4)
         var methodOverride = require('method-override'); // simule DELETE et PUT (express4)
+        var passport = require('passport');
 
-        // configuration =====================
+        // Mongoose ====================================================================
+        require('.config/database');
 
-        // load the config
-        var database = require('./config/database');
+        // Passport ====================================================================
+        require('./config/passport')(passport);
 
-        mongoose.connect(database.url);
+        // Express ====================================================================
 
         app.use(express.static(__dirname + '/public'));                 // défini l'emplacement des fichiers static /public/img will be img for users
         app.use(morgan('dev'));                                         // log every request to the console
@@ -23,11 +27,17 @@
         app.use(bodyParser.json({ type: 'application/vnd.api+json'}));  // parse application/vnd.api+json as json
         app.use(methodOverride());
 
+        // Serveur ====================================================================
+        var server = http.Server(app);
+
         // listen (start app with node server.js) ===========================
         app.listen(port);
         console.log("App listening on port " + port);
 
         // routes ==================================================================================
+        require('./app/routes')(app, passport);
 
-        // load the routes
-        require('./app/routes')(app);
+        process.on('SIGINT', function() {
+            console.log("Stopping...");
+            process.exit();
+        });
