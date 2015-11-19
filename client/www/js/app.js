@@ -28,12 +28,33 @@ angular.module('app', ['ionic'])
     templateUrl: 'templates/tabs.html'
     })
 
-    .state('', {
-    url: '/',
+    .state('tab.profil', {
+    url: '/profil',
     views: {
-      '': {
-        templateUrl:''
+      'tab-profil': {
+        templateUrl:'templates/tab-profil.html'
+      }
+    }
+  })
+
+    .state('tab.party', {
+    url: '/party',
+    views: {
+      'tab-party': {
+        templateUrl:'templates/tab-party.html'
+      }
+    }
+  })
+
+    .state('tab.create_party', {
+    url: '/create_party',
+    views: {
+      'tab-create_party': {
+        templateUrl:'templates/tab-create_party.html'
       }
     }
   });
+
+  // si aucun des resultats n'est trouver alors redirection sur 
+  $urlRouterProvider.otherwise('/tab/party');
 });
