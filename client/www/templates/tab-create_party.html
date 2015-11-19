@@ -1,4 +1,35 @@
-<ion-view view-title="Créer Soirée">
+<ion-view view-title="Créer une Soirée" id="create_party">
 	<ion-content>
+    
+    <div class="list">
+      <label class="item item-input">
+        <p>Image de présentation : <br/><input type="file" /></p>
+        <!-- Faire vérification par contrôleur d'upload image *.jpg *.jpeg *.png -->
+      </label>
+      <label class="item item-input">
+        <p>Date :<input type="date"></p>
+      </label>
+      <label class="item item-input">
+        <p>Nombre de participant max : <input type="number" /></p>
+      </label>
+      <label class="item item-input">
+        <p>Prix : <input type="number" /></p>
+      </label>
+      <label class="item item-input">
+        <p>Lieu : <input type="text"/></p>
+      </label>
+      <label class="item item-input">
+        <p>Nom de la soirée : <input type="text"/></p>
+      </label>
+      <label class="item item-input">
+        <textarea placeholder="Description"></textarea>
+      </label>
+      <div class="center">
+        <button class="button button-stable">
+          Créer la soirée
+        </button>
+      </div>
+    </div>
+
 	</ion-content>
 </ion-view>

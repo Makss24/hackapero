@@ -78,22 +78,24 @@
   white-space: normal;
 }
 
-
-
-/*#soiree .word-wrap{
-  max-height: 50px;
-  max-width: 95%;
-  padding-right: 50px;
-  word-wrap: break-word;
-}
-#soiree .word-wrap::last-child{
-  max-height: 50px;
-  max-width: 95%;
-  padding-right: 50px;
-  white-space: nowrap;
-}*/
-
 #soiree .subdued{
   padding-right: 20px;
   font-style: italic;
 }
+
+/*------- Page CREER SOIREE ----------*/
+
+#create_party .center{
+  text-align: center;
+}
+
+#create_party .button{
+  margin: 20px;
+}
+
+#create_party textarea{
+  min-height: 100px;
+}
+
+
+
