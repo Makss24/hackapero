@@ -1,5 +1,5 @@
 // config/database.js
 
-    module.exports = {
-        url : 'mongodb://localhost:27017/tuto-mean'
-    };
+    var mongoose = require('mongoose');
+
+    module.exports = mongoose.connect('mongodb://localhost/hackapero');
