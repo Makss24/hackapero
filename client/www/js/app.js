@@ -19,8 +19,8 @@ angular.module('app', ['ionic'])
   });
 })
 
-.config(function($statProvider, $urlRouterProvider) {
-  $statProvider
+.config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
 
     .state('tab', {
     url: '/tab',
