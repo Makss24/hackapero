@@ -2,6 +2,8 @@
 										PARTYSERVICE
 \* ---------------------------------------------------- */
 
+// je peux nomer ce qu'il y a dans les parenthese comme je veux mais il faut que cela reste coherent
+
 function partyService($http) {
 	return {
 		get : function() {

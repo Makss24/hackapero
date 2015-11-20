@@ -3,29 +3,29 @@
     
     <div class="list">
       <label class="item item-input">
-        <p>Image de présentation : <br/><input type="file" /></p>
+        <p>Image de présentation : <br/><input type="file" ng-model="party.photo"/></p>
         <!-- Faire vérification par contrôleur d'upload image *.jpg *.jpeg *.png -->
       </label>
       <label class="item item-input">
-        <p>Date :<input type="date"></p>
+        <p>Date :<input type="date" ng-model="party.date"></p>
       </label>
       <label class="item item-input">
-        <p>Nombre de participant max : <input type="number" /></p>
+        <p>Nombre de participant max : <input type="number" ng-model="party.nbParticipant"/></p>
       </label>
       <label class="item item-input">
-        <p>Prix : <input type="number" /></p>
+        <p>Prix : <input type="number" ng-model="party.prix"/></p>
       </label>
       <label class="item item-input">
-        <p>Lieu : <input type="text"/></p>
+        <p>Lieu : <input type="text" ng-model="party.lieu"/></p>
       </label>
       <label class="item item-input">
-        <p>Nom de la soirée : <input type="text"/></p>
+        <p>Nom de la soirée : <input type="text" ng-model="party.nomSoiree"/></p>
       </label>
       <label class="item item-input">
-        <textarea placeholder="Description"></textarea>
+        <textarea placeholder="Description" ng-model="party.description"></textarea>
       </label>
       <div class="center">
-        <button class="button button-stable">
+        <button class="button button-stable" ng-click="create()">
           Créer la soirée
         </button>
       </div>
