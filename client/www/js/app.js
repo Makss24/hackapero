@@ -23,37 +23,45 @@ angular.module('app', ['ionic'])
   $stateProvider
 
     .state('tab', {
-    url: '/tab',
-    abstract: true,
-    templateUrl: 'templates/tabs.html'
+      url: '/tab',
+      abstract: true,
+      templateUrl: 'templates/tabs.html'
     })
 
     .state('tab.profil', {
-    url: '/profil',
-    views: {
-      'tab-profil': {
-        templateUrl:'templates/tab-profil.html'
+      url: '/profil',
+      views: {
+        'tab-profil': {
+          templateUrl:'templates/tab-profil.html'
+        }
       }
-    }
-  })
+    })
 
     .state('tab.party', {
-    url: '/party',
-    views: {
-      'tab-party': {
-        templateUrl:'templates/tab-party.html'
+      url: '/party',
+      views: {
+        'tab-party': {
+          templateUrl:'templates/tab-party.html'
+        }
       }
-    }
-  })
+    })
+    .state('tab.party_detail', {
+      url: '/party/party_detail',
+      views: {
+        'tab-party': {
+          templateUrl: 'templates/party_detail.html'
+        }
+      }
+    })
 
     .state('tab.create_party', {
-    url: '/create_party',
-    views: {
-      'tab-create_party': {
-        templateUrl:'templates/tab-create_party.html'
+      url: '/create_party',
+      views: {
+        'tab-create_party': {
+          templateUrl:'templates/tab-create_party.html'
+        }
       }
-    }
-  });
+    });
 
   // si aucun des resultats n'est trouver alors redirection sur 
   $urlRouterProvider.otherwise('/tab/party');
