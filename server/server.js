@@ -30,6 +30,15 @@
         app.use(session({ secret: 'sampleSecretSession', resave: true, saveUninitialized: true }));
         app.use(passport.initialize());
         app.use(passport.session());
+        app.use(function(request, response, next) {
+          response.header("Access-Control-Allow-Origin", "*");
+          response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+          next();
+        });
+        app.options('*', function (request, response, next) {
+            response.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, OPTIONS");
+            response.send();
+        });
 
         // Serveur ====================================================================
         var server = http.Server(app);
