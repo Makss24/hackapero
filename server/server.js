@@ -13,28 +13,32 @@
         var passport = require('passport');
 
         // Mongoose ====================================================================
-        require('.config/database');
+        require('./config/database');
 
         // Passport ====================================================================
         require('./config/passport')(passport);
 
         // Express ====================================================================
 
-        app.use(express.static(__dirname + '/public'));                 // défini l'emplacement des fichiers static /public/img will be img for users
+        app.use(express.static(__dirname + '/client'));                 // défini l'emplacement des fichiers static /public/img will be img for users
         app.use(morgan('dev'));                                         // log every request to the console
         app.use(bodyParser.urlencoded({'extented' :'true'}));           // parse application/x-form-urlencoded
         app.use(bodyParser.json());                                     // parse application/json
         app.use(bodyParser.json({ type: 'application/vnd.api+json'}));  // parse application/vnd.api+json as json
         app.use(methodOverride());
 
+        app.use(session({ secret: 'sampleSecretSession', resave: true, saveUninitialized: true }));
+        app.use(passport.initialize());
+        app.use(passport.session());
+
         // Serveur ====================================================================
         var server = http.Server(app);
 
         // listen (start app with node server.js) ===========================
-        app.listen(port);
+        server.listen(port);
         console.log("App listening on port " + port);
 
-        // routes ==================================================================================
+        // Routes ==================================================================================
         require('./app/routes')(app, passport);
 
         process.on('SIGINT', function() {
