@@ -13,8 +13,12 @@
       <!-- Mettre le "button" à l'interieur de "form" pour valider service -->
     </form>
 
-    <ion-item class="button-full center" href="#/tab/party">
-        <button class="button button-stable">
+  <!-- href="#/tab/party" -->
+  <ion-spinner icon="bubbles" class="hide"></ion-spinner>
+  <div class="loading"><br/></div>
+    <ion-item class="button-full center">
+        
+        <button class="button button-stable" ng-click="doLogin()">
           Connexion
         </button>
       </ion-item>
