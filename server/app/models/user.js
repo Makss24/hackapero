@@ -54,7 +54,7 @@ var User = {
 
 		findAll: function(req, res) {
 			User.model.find({}, function (err, users) {
-				res.json(user);
+				res.json(users);
 			});
 	},
 

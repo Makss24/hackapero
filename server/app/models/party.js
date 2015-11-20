@@ -37,7 +37,7 @@ var Party = {
 
 	findAll: function(req, res) {
 		Party.model.find({}, function (err, partys) {
-			res.json(party);
+			res.json(partys);
 		});
 	},
 
