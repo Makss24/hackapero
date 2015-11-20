@@ -1,15 +1,27 @@
-<ion-view view-title="Connexion">
-  <ion-content class="center">
-    <img src="img/logo.jpg" alt="logo" class="item-avatar" />
-
+<ion-view view-title="Connexion" id="connexion">
+  <ion-content>
+    <div class="logo">
+      <img src="img/logo.jpg" alt="logo" class="item-avatar" />
+    </div>
     <form class="list">
       <label class="item item-input">
-        <input type="text" placeholder="E-mail">
+        <input type="email" placeholder="E-mail">
       </label>
       <label class="item item-input">
         <input type="text" placeholder="Mot de passe">
       </label>
+      <!-- Mettre le "button" à l'interieur de "form" pour valider service -->
     </form>
+
+  <!-- href="#/tab/party" -->
+  <ion-spinner icon="bubbles" class="hide"></ion-spinner>
+  <div class="loading"><br/></div>
+    <ion-item class="button-full center">
+        
+        <button class="button button-stable" ng-click="doLogin()">
+          Connexion
+        </button>
+      </ion-item>
     
   </ion-content>
 </ion-view>
