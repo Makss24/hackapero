@@ -4,8 +4,9 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 angular.module('app', ['ionic', 'app.controllers'])
-    //.service('userService', userService)
-    //.service('partyService', partyService)
+    .service('userService', userService)
+    .service('partyService', partyService)
+    .controller('partyListCtrl', partyListCtrl)
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -49,7 +50,8 @@ angular.module('app', ['ionic', 'app.controllers'])
       url: '/party',
       views: {
         'tab-party': {
-          templateUrl:'templates/tab-party.html'
+          templateUrl:'templates/tab-party.html',
+          controller: 'partyListCtrl'
         }
       }
     })

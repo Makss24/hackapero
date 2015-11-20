@@ -7,35 +7,27 @@
         <input type="text" placeholder="Search">
       </label>
     </div>
+    <div ng-repeat="party in partys">
     <ion-item class="list card" href="#/tab/party/party_detail">
 
         <div class="item item-avatar">
           <img src="img/jerome.png">
-          <h2>Carnaval de Dunkerque</h2>
-          <p>Date : 30/01/2016</p>
+          <h2>{{party.nomSoiree}}</h2>
+          <p>Date : {{party.date}}</p>
           <div class="word-wrap2">
-          <p class="word-wrap">
-            This is the description of this party, organized by Jérôme!
-            If you want more information, sow informations about the party or contact me. If you are interesting, join us!
-            This is the description of this party, organized by Jérôme!
-            If you want more information, sow informations about the party or contact me. If you are interesting, join us!
-            This is the description of this party, organized by Jérôme!
-            If you want more information, sow informations about the party or contact me. If you are interesting, join us!
-            This is the description of this party, organized by Jérôme!
-            If you want more information, sow informations about the party or contact me. If you are interesting, join us!
-            This is the description of this party, organized by Jérôme!
-            If you want more information, sow informations about the party or contact me. If you are interesting, join us!
+          <p class="word-wrap">{{party.description}}
           </p>
           </div>
           <i class="ion-chevron-right icon-accessory float-right"></i>
           <p class="stop-float">
-            <div class="subdued">Prix :<br/> 5 €</div>
-            <div class="subdued">Participant :<br/> 15/20</div>
+            <div class="subdued">Prix :<br/> {{party.prix}} €</div>
+            <div class="subdued">Participant max :<br/> {{party.nbParticipant}}</div>
           </p>
           
         </div>
 
       </ion-item>
+      </div>
 
 	</ion-content>
 </ion-view>
