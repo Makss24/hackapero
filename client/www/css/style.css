@@ -4,6 +4,44 @@ ion-tabs{
   bottom: 0;
 }
 
+/*------- PAGE CONNEXION -------*/
+
+#connexion .center{
+  text-align: center;
+
+  border: none;
+}
+
+#connexion .button{
+  margin: 20px;
+}
+
+#connexion .button-full .item-content{
+  padding: 0;
+  margin: 0;
+}
+
+#connexion .logo{
+  text-align: center;
+  margin: 20px;
+}
+
+#connexion .item-avatar{
+  padding: 0;
+  width: 150px;
+  text-align: center;
+}
+
+#connexion .item-avatar > img:first-child{
+  max-width: 140px;
+  max-height: 140px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  margin: 20px;
+}
 
 /*------- PAGE PROFIL ---------*/
 

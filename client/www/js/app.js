@@ -30,6 +30,11 @@ angular.module('app', ['ionic'])
       templateUrl: 'templates/tabs.html'
     })
 
+    .state('connexion', {
+      url: '/connexion',
+      templateUrl: 'templates/connexion.html'
+    })
+
     .state('tab.profil', {
       url: '/profil',
       views: {
@@ -66,5 +71,5 @@ angular.module('app', ['ionic'])
     });
 
   // si aucun des resultats n'est trouver alors redirection sur 
-  $urlRouterProvider.otherwise('/tab/party');
+  $urlRouterProvider.otherwise('/connexion');
 });
